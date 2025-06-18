@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "llm_certainty_eval"
+version = "0.1.0"
+description = "Self-reflection certainty scoring library"
+authors = ["Claire Lee <gl2429@columbia.edu>"]
+packages = [{ include = "llm_reflection" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+setuptools = "^80.9.0"
+litellm = "1.72.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+flake8 = "^7.2.0"
+pylint = "^3.3.7"
+mypy = "^1.16.1"
+black = "^25.1.0"
+loguru = "^0.7.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
