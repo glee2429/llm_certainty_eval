@@ -31,18 +31,48 @@ Example output:
 ```
 Q: 'What is 1 + 1?'
 A: '2'
-→ score: 1.0
-  reflection response: 'A'
-
-Q: 'What is the third month in alphabetical order?'
-A: 'March'
-→ score: 0.5
-  reflection response: 'C (not sure)'
+→ averaged score: 1.00
+  letters: ['A', 'A', 'A']
+  raw reflections:
+    [1] 'The answer is correct within the standard axioms of arithmetic.\nA'
+    [2] 'The answer is correct because the basic axioms of arithmetic define 1 + 1 as 2.\nA'
+    [3] 'The answer is correct because it follows the basic axioms of arithmetic.\nA'
 
 Q: 'What is 6 + 6?'
 A: '13'
-→ score: 0.0
-  reflection response: 'B'
+→ averaged score: 0.00
+  letters: ['B', 'B', 'B']
+  raw reflections:
+    [1] 'The answer is incorrect because basic addition dictates that 6 + 6 equals 12, not 13.\nB'
+    [2] 'The answer is incorrect because basic addition dictates that 6 + 6 equals 12, not 13.\nB'
+    [3] 'The answer is incorrect because basic addition dictates that 6 + 6 equals 12, not 13.\nB'
+
+Q: 'What is the third month in alphabetical order?'
+A: 'March'
+→ averaged score: 0.00
+  letters: ['B', 'B', 'B']
+  raw reflections:
+    [1] 'The answer is incorrect because when the months are listed alphabetically, April comes first, then August, then December, making December the third month in alphabetical order.\nB'
+    [2] 'The answer is incorrect because April is the third month when the months are listed in alphabetical order.\nB'
+    [3] 'The answer is incorrect because the months in alphabetical order start with April, August, and then December.\nB'
+
+Q: "How many r's are in the word 'strawberry'?"
+A: '3'
+→ averaged score: 1.00
+  letters: ['A', 'A', 'A']
+  raw reflections:
+    [1] "The answer is correct because the word 'strawberry' contains three 'r' letters.\nA"
+    [2] "The answer is correct because the word 'strawberry' contains three 'r's.\nA"
+    [3] "The answer is correct because counting the 'r's in 'strawberry' yields three.\nA"
+
+Q: "Is the sentence 'I always lie.' true or false?"
+A: 'It depends.'
+→ averaged score: 0.50
+  letters: ['C', 'C', 'C']
+  raw reflections:
+    [1] "The sentence creates a paradox because if it's true, it must be false, and if it's false, it must be true.\nC"
+    [2] "The sentence creates a paradox because if it's true, it must be false, and if it's false, it must be true.\nC"
+    [3] "The statement creates a paradox, as if it's true, it must be false, and if it's false, it must be true, making its truth value indeterminate.\nC"
 ```
 
 ### Running Tests
@@ -97,7 +127,7 @@ This project includes:
 
 1. A Python library implementing self-reflection certainty (section 3.2 of the paper).
 2. A standalone example showing how to use the library (see `demo.py`).
-3. Development notes in `WRITEUP.md`.
+3. Design rationale (see README's Design Decisions section).
 
 ### Expected Output Structure
 
