@@ -17,6 +17,16 @@ To install the project dependencies, use Poetry:
 poetry install
 ```
 
+### API Key
+
+The library defaults to Gemini models via LiteLLM, so you must supply a valid
+`GEMINI_API_KEY`.  Create a `.env` file in the project root with:
+
+```dotenv
+# .env
+GEMINI_API_KEY=your_api_key_here
+```
+
 ## Usage
 
 ### Running the Demo
